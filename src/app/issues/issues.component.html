@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">Issues Listing</div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <p>Listing issues from <a href="https://github.com/eidher/linio-issues/issues">https://github.com/eidher/linio-issues/issues</a></p>
+        </div>
+        <div class="col-md-4">
+          <a [routerLink]="['/issues-create']" class="btn btn-success pull-right">
+            New Issue <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Issue</th>
+        <th>Author</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let issue of issues">
+        <td>{{ issue.number }}</td>
+        <td class="title">{{ issue.title }}</td>
+        <td>{{ issue.creator }}</td>
+        <td><a href="https://github.com/eidher/linio-issues/issues/{{issue.number}}" target="_blank" class="btn btn-primary btn-sm">See Issue</a></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
